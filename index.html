@@ -1,47 +1,145 @@
-   <form onsubmit="return allSelected();">
-       首重<select id="sel1">
-        <option value="0">选择价格</option>
-        <option value="8" >广东8元</option>
-        <option value="10" >江苏10元</option>
-        <option value="10" >浙江10元</option>
-        <option value="10" >上海10元</option>
-        <option value="12" >安徽12元</option>
-        <option value="12" >北京12元</option>
+大件物品计算器 
+<br> 
+<form onsubmit="return bigAllSelected();">
+	  长(cm)
+	  <input id="big1" size="5" value="0" onFocus="if (value =='0'){value =''}" onBlur="if (value ==''){value='0'}" />
+	  宽(cm)
+	  <input id="big2" size="5" value="0" onFocus="if (value =='0'){value =''}" onBlur="if (value ==''){value='0'}" />
+	  高(cm)
+	  <input id="big3" size="5" value="0" onFocus="if (value =='0'){value =''}" onBlur="if (value ==''){value='0'}" />
+	  <br/>
+	  系数（默认/7000）
+	  <input id="big4" size="5" value="7000" onFocus="if (value =='0'){value =''}" onBlur="if (value ==''){value='0'}" />
+	  <br/>
+	  重量(kg)
+	  <input id="big5" size="10" value="0" style="border:0;background:transparent;width:30px;height:15px;color:#FF0000" />
+</form>
+输入重量(kg)
+<input id="weight" size="5" value="0" onFocus="if (value =='0'){value =''}" onBlur="if (value ==''){value='0'}" />
+价格
+<input id="sum" size="10" value="0" style="border:0;background:transparent;width:30px;height:15px;color:#FF0000" title="最终计费" />
+  <form onsubmit="return allSelected();">
+      地区
+	  <select id="sel1">
+        <option value="0">选择地区</option>
+        <option value="8" >山东</option>
+        <option value="10" >浙江、江苏、上海</option>
+        <option value="10" >安徽、天津、北京</option>
+        <option value="10" >江西、湖南</option>
+        <option value="12" >山西、广东</option>
+        <option value="12" >湖北、陕西</option>
+        <option value="10" >河南、河北</option>
+        <option value="10" >黑龙江、吉林、辽宁</option>
+        <option value="10" >福建</option>
+        <option value="12" >贵州、广西</option>
+        <option value="12" >云南、四川、重庆</option
+        <option value="10" >海南</option>
+        <option value="10" >内蒙、甘肃、宁夏、青海</option>
+        <option value="10" >新疆</option>
+        <option value="12" >西藏</option>
       </select>
-      续价
-      <select id="sel2">
-        <option value="0">选择续价</option>
-        <option value="1" >广东1元</option>
-        <option value="5" >江苏5元</option>
-        <option value="5" >浙江5元</option>
-        <option value="5" >上海5元</option>
-        <option value="5" >安徽5元</option>
-        <option value="5" >北京5元</option>
+	  <br/>
+      首重1kg资费
+	  <select id="sel2" disabled="disabled">
+        <option value="0">Empty</option>
+        <option value="8" >8</option>
+		<option value="8" >8</option>
+        <option value="10" >10</option>
+		<option value="10" >10</option>
+		<option value="10" >10</option>
+		<option value="10" >10</option>
+		<option value="10" >10</option>
+        <option value="12" >12</option>
+        <option value="12" >12</option>
+        <option value="15" >15</option>
+		<option value="15" >15</option>
+		<option value="18" >18</option>
+		<option value="18" >18</option>
+		<option value="25" >25</option>
+		<option value="25" >25</option>		
       </select>
-      续重<input id="sel3" size="5" value="0" onFocus="if (value =='0'){value =''}" onBlur="if (value ==''){value='0'}" title="输入续重重量,不含首重!" />
-        运费:<input id="sum" size="5" style="border:0;background:transparent;width:30px;height:15px;color:#FF0000" title="最终计费" />元(首重+续重费用*重量)
-      <script type="text/javascript">
-  <!--
-    window.onload = function(){
-        for(var i=1;i<=3;i++){
-            document.forms[0]["sel" + i].onchange = getSum;
+      续重（小于3kg）
+      <select id="sel3" disabled="disabled">
+        <option value="0">Empty</option>
+        <option value="2" >2</option>
+		<option value="4" >4</option>
+        <option value="6" >6</option>
+		<option value="6" >6</option>
+		<option value="6" >6</option>
+		<option value="6" >6</option>
+		<option value="6" >6</option>
+        <option value="6" >6</option>
+        <option value="8" >8</option>
+        <option value="10" >10</option>
+		<option value="10" >10</option>
+		<option value="12" >12</option>
+		<option value="15" >15</option>
+		<option value="25" >25</option>
+		<option value="25" >25</option>	
+      </select>
+	  续重大于3kg
+      <select id="sel4" disabled="disabled">
+        <option value="0">Empty</option>
+        <option value="4" >4</option>
+		<option value="6" >6</option>
+        <option value="8" >8</option>
+		<option value="8" >8</option>
+		<option value="8" >8</option>
+		<option value="8" >8</option>
+		<option value="8" >8</option>
+        <option value="8" >8</option>
+        <option value="10" >10</option>
+        <option value="12" >12</option>
+		<option value="12" >12</option>
+		<option value="14" >14</option>
+		<option value="17" >17</option>
+		<option value="27" >27</option>
+		<option value="27" >27</option>	
+      </select>
+</form>
+
+<script type="text/javascript">
+	window.onload = function(){
+        for(var i=1;i<=4;i++){
+            document.forms[1]["sel" + i].onchange = getSum;
+        }
+		document.getElementById("weight").onchange = getSum;
+		for(var i=1;i<=4;i++){
+            document.forms[0]["big" + i].onchange = getWeight;
         }
     }
-function getSum(){
-  if(this.nodeName=='SELECT'){
-   var index = this.selectedIndex
-   document.getElementById("sel1").options[index].selected = true;
-   document.getElementById("sel2").options[index].selected = true;
-  }
+	function getSum(){
+		if(this.nodeName=='SELECT'){
+			var index = this.selectedIndex
+			document.getElementById("sel2").options[index].selected = true;
+			document.getElementById("sel3").options[index].selected = true;
+			document.getElementById("sel4").options[index].selected = true;
+		}
         var sum = 0;
-        var val1=parseFloat(document.getElementById("sel1").value);
+        var val1=parseFloat(document.getElementById("weight").value);
         var val2=parseFloat(document.getElementById("sel2").value);
         var val3=parseFloat(document.getElementById("sel3").value);
-        sum=val1+val2*val3;
+		var val4=parseFloat(document.getElementById("sel4").value);
+		if(val1 <=1)
+			sum = val2;
+		else if(val1 > 1 && val1 <=3)
+			sum = val2 + (val1 - 1)*val3;
+		else{
+			sum = val2 + val3*2 + val4*(val1 - 3);
+		}
         document.getElementById('sum').value = sum;
-    }
+	}
+	function getWeight(){
+        var sum = 0;
+        var val1=parseFloat(document.getElementById("big1").value);
+        var val2=parseFloat(document.getElementById("big2").value);
+        var val3=parseFloat(document.getElementById("big3").value);
+		var val4=parseFloat(document.getElementById("big4").value);
+        big5=val1*val2*val3/val4;
+        document.getElementById('big5').value = big5;
+	}
     function allSelected(){
-        for(var i=1;i<=3;i++){
+        for(var i=1;i<=4;i++){
             if(document.getElementById("sel" + i).value == 0){
                 alert('请为所有项目选择！');
                 return false;
@@ -49,6 +147,13 @@ function getSum(){
         }
         return true;
     }
-  //-->
-  </script>
-    </form>
+	function bigAllSelected(){
+        for(var i=1;i<=4;i++){
+            if(document.getElementById("big" + i).value == 0){
+                alert('请为所有项目选择！');
+                return false;
+            }
+        }
+        return true;
+    }
+</script>
