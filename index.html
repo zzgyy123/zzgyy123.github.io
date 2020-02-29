@@ -17,8 +17,10 @@ select{ font-size:20px;}
 <form onsubmit="return bigAllSelected();">
 	  长(cm)
 	  <input id="big1" size="5" value="0" onFocus="if (value =='0'){value =''}" onBlur="if (value ==''){value='0'}" />
+	  <br/>
 	  宽(cm)
 	  <input id="big2" size="5" value="0" onFocus="if (value =='0'){value =''}" onBlur="if (value ==''){value='0'}" />
+	  <br/>
 	  高(cm)
 	  <input id="big3" size="5" value="0" onFocus="if (value =='0'){value =''}" onBlur="if (value ==''){value='0'}" />
 	  <br/>
@@ -33,6 +35,7 @@ select{ font-size:20px;}
 <input id="weight" size="5" value="0" onFocus="if (value =='0'){value =''}" onBlur="if (value ==''){value='0'}" />
 价格
 <input id="sum" size="10" value="0" style="border:0;background:transparent;width:30px;height:15px;color:#FF0000" title="最终计费" />
+<br/>
   <form onsubmit="return allSelected();">
       地区
 	  <select id="sel1">
@@ -73,6 +76,7 @@ select{ font-size:20px;}
 		<option value="25" >25</option>
 		<option value="25" >25</option>		
       </select>
+	  <br/>
       续重（小于3kg）
       <select id="sel3" disabled="disabled">
         <option value="0">Empty</option>
@@ -92,6 +96,7 @@ select{ font-size:20px;}
 		<option value="25" >25</option>
 		<option value="25" >25</option>	
       </select>
+	  <br/>
 	  续重大于3kg
       <select id="sel4" disabled="disabled">
         <option value="0">Empty</option>
