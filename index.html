@@ -28,13 +28,14 @@ select{ font-size:20px;}
 	  <input id="big4" size="5" value="7000" onFocus="if (value =='0'){value =''}" onBlur="if (value ==''){value='0'}" />
 	  <br/>
 	  重量(kg)
-	  <input id="big5" size="10" value="0" style="border:0;background:transparent;width:30px;height:15px;color:#FF0000" />
+	  <input id="big5" size="10" value="0" disabled="disabled"/>
 </form>
 <h3>价格计算器</h3> 
 输入重量(kg)
 <input id="weight" size="5" value="0" onFocus="if (value =='0'){value =''}" onBlur="if (value ==''){value='0'}" />
+<br/>
 价格
-<input id="sum" size="10" value="0"/>
+<input id="sum" size="10" value="0" disabled="disabled" />
 <br/>
   <form onsubmit="return allSelected();">
       地区
