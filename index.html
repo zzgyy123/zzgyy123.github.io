@@ -1,61 +1,54 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-
-    <meta charset="UTF-8">
-
-    <title>CSS3二级下拉动画滑动菜单 - 站长素材</title>
-
-    <link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
-
-</head>
-
-<body>
-
-<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-<div class="sidebar">
-    <h1><i class="fa fa-bars push"></i>Animated <span class="color">Menu</span></h1>
-    <ul>
-        <li><a href="#"><i class="fa fa-dashboard push"></i>Dashboard<i class="fa fa-angle-right"></i></a><span class="hover"></span>
-        </li>
-        <li><a href="#"><i class="fa fa-user push"></i>Users<i class="fa fa-angle-right"></i></a><span class="hover"></span>
-            <ul class="sub-menu">
-                <li><a href="#">Add User<i class="fa fa-angle-right"></i></a><span class="hover"></span></li>
-                <li><a href="#">Manage Users<i class="fa fa-angle-right"></i></a><span class="hover"></span></li>
-            </ul>
-        </li>
-        <li><a href="#"><i class="fa fa-cog push"></i>Settings<i class="fa fa-angle-right"></i></a><span class="hover"></span>
-            <ul class="sub-menu">
-                <li><a href="#">Dashboard Settings<i class="fa fa-angle-right"></i></a><span class="hover"></span></li>
-                <li><a href="#">Profile Settings<i class="fa fa-angle-right"></i></a><span class="hover"></span></li>
-                <li><a href="#">Manage Menu<i class="fa fa-angle-right"></i></a><span class="hover"></span></li>
-                <li><a href="#">User Profiles<i class="fa fa-angle-right"></i></a><span class="hover"></span></li>
-            </ul></li>
-        <li><a href="#"><i class="fa fa-picture-o push"></i>appearance<i class="fa fa-angle-right"></i></a><span class="hover"></span>
-            <ul class="sub-menu">
-                <li><a href="#">Change Theme<i class="fa fa-angle-right"></i></a><span class="hover"></span>
-                </li>
-                <li><a href="#">Theme Options<i class="fa fa-angle-right"></i></a><span class="hover"></span></li>
-            </ul>
-        </li>
-        <li><a href="#"><i class="fa fa-file push"></i>Information<i class="fa fa-angle-right"></i></a><span class="hover"></span>
-            <ul class="sub-menu">
-                <li><a href="#">Latest News<i class="fa fa-angle-right"></i></a><span class="hover"></span>
-                </li>
-                <li><a href="#">Recent Articles<i class="fa fa-angle-right"></i></a><span class="hover"></span></li>
-            </ul>
-        </li>
-        <li><a href="#"><i class="fa fa-plane push"></i>Contact<i class="fa fa-angle-right"></i></a><span class="hover"></span></li>
-    </ul>
-</div>
-<script src='js/jquery.js'></script>
-
-<script src="js/index.js"></script>
-<br><br><br><br><br><br>
-<div style="text-align:center; font:normal 14px/24px 'MicroSoft YaHei';">
-    <p>.....懒得弄了....</p><br>
-</div>
-</body>
-
-</html>
+   <form onsubmit="return allSelected();">
+       首重<select id="sel1">
+        <option value="0">选择价格</option>
+        <option value="8" >广东8元</option>
+        <option value="10" >江苏10元</option>
+        <option value="10" >浙江10元</option>
+        <option value="10" >上海10元</option>
+        <option value="12" >安徽12元</option>
+        <option value="12" >北京12元</option>
+      </select>
+      续价
+      <select id="sel2">
+        <option value="0">选择续价</option>
+        <option value="1" >广东1元</option>
+        <option value="5" >江苏5元</option>
+        <option value="5" >浙江5元</option>
+        <option value="5" >上海5元</option>
+        <option value="5" >安徽5元</option>
+        <option value="5" >北京5元</option>
+      </select>
+      续重<input id="sel3" size="5" value="0" onFocus="if (value =='0'){value =''}" onBlur="if (value ==''){value='0'}" title="输入续重重量,不含首重!" />
+        运费:<input id="sum" size="5" style="border:0;background:transparent;width:30px;height:15px;color:#FF0000" title="最终计费" />元(首重+续重费用*重量)
+      <script type="text/javascript">
+  <!--
+    window.onload = function(){
+        for(var i=1;i<=3;i++){
+            document.forms[0]["sel" + i].onchange = getSum;
+        }
+    }
+function getSum(){
+  if(this.nodeName=='SELECT'){
+   var index = this.selectedIndex
+   document.getElementById("sel1").options[index].selected = true;
+   document.getElementById("sel2").options[index].selected = true;
+  }
+        var sum = 0;
+        var val1=parseFloat(document.getElementById("sel1").value);
+        var val2=parseFloat(document.getElementById("sel2").value);
+        var val3=parseFloat(document.getElementById("sel3").value);
+        sum=val1+val2*val3;
+        document.getElementById('sum').value = sum;
+    }
+    function allSelected(){
+        for(var i=1;i<=3;i++){
+            if(document.getElementById("sel" + i).value == 0){
+                alert('请为所有项目选择！');
+                return false;
+            }
+        }
+        return true;
+    }
+  //-->
+  </script>
+    </form>
