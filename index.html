@@ -1,5 +1,19 @@
-大件物品计算器 
-<br> 
+<head>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'>
+<meta name='apple-mobile-web-app-capable' content='yes'>
+<meta name='apple-mobile-web-app-status-bar-style' content='black'>
+<meta name='format-detection' content='telephone=no'>
+<style type='text/css'>img{width:100%}</style>
+<table style="width:100%;font-size:1.1em">
+</head>
+<style>
+body{ font-size:20px;}
+input{ font-size:20px; line-height:20px; margin:10px 5px 10px 5px;}
+select{ font-size:20px;}
+</style>
+<body >
+<h1>小芳果业集团</h1> 
+<h3>大件物品重量计算器</h3> 
 <form onsubmit="return bigAllSelected();">
 	  长(cm)
 	  <input id="big1" size="5" value="0" onFocus="if (value =='0'){value =''}" onBlur="if (value ==''){value='0'}" />
@@ -14,6 +28,7 @@
 	  重量(kg)
 	  <input id="big5" size="10" value="0" style="border:0;background:transparent;width:30px;height:15px;color:#FF0000" />
 </form>
+<h3>价格计算器</h3> 
 输入重量(kg)
 <input id="weight" size="5" value="0" onFocus="if (value =='0'){value =''}" onBlur="if (value ==''){value='0'}" />
 价格
@@ -97,6 +112,7 @@
 		<option value="27" >27</option>	
       </select>
 </form>
+</body>
 
 <script type="text/javascript">
 	window.onload = function(){
